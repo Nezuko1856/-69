@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дром</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: black;
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        .logo img {
+            height: 50px; 
+            width: 50px; 
+            border-radius: 50%; 
+            margin-right: 10px; 
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+        .nav a:hover {
+            background-color: lightgray; 
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 200px;
+            z-index: 1;
+            border: 1px solid #ccc;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .submit {
+            background-color: red; 
+            color: white; 
+            padding: 10px 20px;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            margin-left: 20px;
+        }
+        .login {
+            margin-left: 20px;
+            color: white;
+            text-decoration: none;
+        }
+        .region-title {
+          right: 25px;
+            margin: 20px 0;
+            
+        }
+        .region-links {
+          right: 50px;
+        }
+        .region-links a {
+            color: blue;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        .region-links a:hover {
+            color: red; 
+        }
+        .gallery {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .car-item {
+            min-width: 200px; 
+            margin-right: 10px; 
+            position: relative;
+        }
+        .car-item img {
+            width: 100%; 
+            height: 150px;
+        }
+        .car-price {
+            position: absolute;
+            bottom: 25px;
+            left: 5px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px;
+        }
+        .car-name {
+            text-align: center;
+            margin-top: 5px;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(255, 255, 255, 0.8);
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 10;
+        }
+        .arrow.left {
+            left: 10px;
+        }
+        .arrow.right {
+            right: 10px;
+        }
+        .search-title {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            color: black;
+            transition: color 0.3s;
+        }
+        .search-title:hover {
+            color: red; 
+        }
+        .brand-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 0 20px;
+        }
+        .brand-item {
+            display: flex;
+            align-items: center;
+            transition: color 0.3s;
+        }
+        .brand-item img {
+            width: 25px; 
+            height: 25px; 
+            margin-right: 10px;
+        }
+        .brand-item:hover .brand-name {
+            color: red; 
+        }
+        .brand-name {
+            color: black; 
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+  
+
+    <div class="header">
+        <div class="logo">
+          <img src="images/logo drom.png" alt="Фото автомобиля"> 
+            <h1>Дром</h1>
+        </div>
+        <div class="nav">
+            <a href="#">Автомобили</a>
+            <a href="#">Грузовики и спецтехника</a>
+            <a href="#">Мотоциклы</a>
+            <a href="#">Запчасти</a>
+            <a href="#">Отзывы</a>
+            <a href="#">Каталог</a>
+            <a href="#">Шины</a>
+            <div class="dropdown">
+                <a href="#">Еще</a>
+                <div class="dropdown-content">
+                    <a href="#">Аукционы Японии</a>
+                    <a href="#">Автомобили из Кореи</a>
+                    <a href="#">Автомобили из Германии</a>
+                    <a href="#">Китайские автомобили</a>
+                    <a href="#">Электромобили</a>
+                    <a href="#">ОСАГО онлайн</a>
+                    <a href="#">Автокредиты</a>
+                    <a href="#">Проверка по VIN</a>
+                    <a href="#">Оценить автомобиль</a>
+                    <a href="#">Форумы</a>
+                    <a href="#">ПДД онлайн</a>
+                    <a href="#">Вопросы и ответы</a>
+                    <a href="#">Рейтинг авто</a>
+                    <a href="#">Каталог шин</a>
+                    <a href="#">Договор купли-продажи</a>
+                    <a href="#">Правовые вопросы</a>
+                    <a href="#">Карта сайта</a>
+                    <a href="#">Размещение на Дроме</a>
+                    <a href="#">Разместить прайс</a>
+                    <a href="#">Помощь</a>
+                </div>
+            </div>
+            <button class="submit">Подать объявление</button>
+            <a href="#" class="login">Вход и регистрация</a>
+        </div>
+    </div>
+
+    <div class="region-title">
+        <h2>Продажа авто в России</h2>
+    </div>
+    
+    <div class="region-links">
+        <a href="#">Приморье</a>
+        <a href="#">Владивосток</a>
+        <a href="#">Уссурийск</a>
+        <a href="#">Находка</a>
+    </div>
+
+    <div class="gallery">
+      
+        <div class="arrow left" onclick="moveLeft()">&#9664;</div>
+        <div class="car-item">
+          <img src="images/car 1.jpg" alt="Фото автомобиля 1">
+            <div class="car-price">Цена: 500,000 руб.</div>
+            <div class="car-name">а</div>
+            
+            
+        </div>
+        <div class="car-item">
+            <img src="images/car 2.jpg" alt="Фото автомобиля 2">
+            <div class="car-price">Цена: 600,000 руб.</div>
+            <div class="car-name">Автомобиль 2</div>
+        </div>
+        <div class="car-item">
+          <img src="images/car 3.jpg" alt="Фото автомобиля 3">
+            <div class="car-price">Цена: 700,000 руб.</div>
+            <div class="car-name">Автомобиль 3</div>
+        </div>
+        <div class="car-item">
+            <img src="images/car 4.jpg" alt="Фото автомобиля 4">
+            <div class="car-price">Цена: 800,000 руб.</div>
+            <div class="car-name">Автомобиль 4</div>
+        </div>
+        <div class="car-item">
+          <img src="images/car 5.jpg" alt="Фото автомобиля 5">
+            <div class="car-price">Цена: 900,000 руб.</div>
+            <div class="car-name">Автомобиль 5</div>
+        </div>
+        <div class="car-item">
+          <img src="images/car 6.jpg" alt="Фото автомобиля 6">
+            <div class="car-price">Цена: 1,000,000 руб.</div>
+            <div class="car-name">Автомобиль 6</div>
+        </div>
+        <div class="car-item">
+          <img src="images/car 7.jpg" alt="Автомобиль 7">
+            <div class="car-price">Цена: 1,100,000 руб.</div>
+            <div class="car-name">Автомобиль 7</div>
+        </div>
+        <div class="car-item">
+            <img src="images/car 8.jpg" alt="Автомобиль 8">
+            <div class="car-price">Цена: 1,200,000 руб.</div>
+            <div class="car-name">Автомобиль 8</div>
+        </div>
+        <div class="car-item">
+          <img src="images/car 9.jpg" alt="Автомобиль 9">
+            <div class="car-price">Цена: 1,300,000 руб.</div>
+            <div class="car-name">Автомобиль 9</div>
+        </div>
+        <div class="car-item">
+          <img src="images/car 10.jpg" alt="Автомобиль 10">
+            <div class="car-price">Цена: 1,400,000 руб.</div>
+            <div class="car-name">Автомобиль 10</div>
+        </div>
+        <div class="arrow right" onclick="moveRight()">&#9654;</div>
+    </div>
+    <div class="search-title">Поиск объявлений</div>
+
+    <div class="brand-grid">
+      <div class="brand-item">
+        <img src="images/audi.jpg" alt="Audi">
+          <div class="brand-name">Audi</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/bmw.jpg" alt="BMW">
+          <div class="brand-name">BMW</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Daihatsu.jpg" alt="Daihatsu">
+          <div class="brand-name">Daihatsu</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Ford.jpg" alt="Ford">
+          <div class="brand-name">Ford</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/hyundai.jpg" alt="Hyundai">
+          <div class="brand-name">Hyundai</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/inf.jpg" alt="Infiniti">
+          <div class="brand-name">Infiniti</div>
+      </div>
+      <div class="brand-item">
+          <img src="images/Kia.jpg" alt="Kia">
+          <div class="brand-name">Kia</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Land Rover.png" alt="Land Rover">
+          <div class="brand-name">Land Rover</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Lexus.jpg" alt="Lexus">
+          <div class="brand-name">Lexus</div>
+      </div>
+      <div class="brand-item">
+          <img src="images/mazda.jpg" alt="Mazda">
+          <div class="brand-name">Mazda</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Mercedes-Benz.jpg" alt="Mercedes-Benz">
+          <div class="brand-name">Mercedes-Benz</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Mitsubishi.jpg" alt="Mitsubishi">
+          <div class="brand-name">Mitsubishi</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/nissan.jpg" alt="Nissan">
+          <div class="brand-name">Nissan</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/subaru.jpg" alt="Subaru">
+          <div class="brand-name">Subaru</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Suzuki.jpg" alt="Suzuki">
+          <div class="brand-name">Suzuki</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/Toyota.jpg" alt="Toyota">
+          <div class="brand-name">Toyota</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/voits.jpg" alt="Volkswagen">
+          <div class="brand-name">Volkswagen</div>
+      </div>
+      <div class="brand-item">
+        <img src="images/лада.jpg" alt="Лада">
+          <div class="brand-name">Лада</div>
+      </div>
+  </div>
+
+    
+
+    <script>
+        let currentIndex = 0;
+        const itemsToShow = 9;
+        const totalItems = 10; // Всего 10 автомобилей
+
+        function moveLeft() {
+            if (currentIndex > 0) {
+                currentIndex--;
+                updateGallery();
+            }
+        }
+
+        function moveRight() {
+            if (currentIndex < totalItems - itemsToShow) {
+                currentIndex++;
+                updateGallery();
+            }
+        }
+
+        function updateGallery() {
+            const gallery = document.querySelector('.gallery');
+            const carItems = document.querySelectorAll('.car-item');
+            carItems.forEach((item, index) => {
+                item.style.display = (index >= currentIndex && index < currentIndex + itemsToShow) ? 'block' : 'none';
+            });
+        }
+
+        // Инициализация галереи
+        updateGallery();
+    </script>
+
+</body>
+</html>
+
